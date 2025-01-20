@@ -132,78 +132,104 @@ section{
 }
 
 /*ABOUT*/
-#about{
+#about {
   background-color: var(--second-background);
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 5em;
+  padding-top: 6em;
 }
-#about img{
-  width:30vw;
+
+#about img {
+  width: 30vw;
   border-radius: 1em;
+  transition: all 0.3s ease-in-out;
 }
-.about-box{
+
+.about-box {
   display: flex;
   flex-direction: column;
   text-align: left;
   gap: 2em;
+  transition: all 0.3s ease-in-out;
 }
-.about-box h1{
+
+.about-box h1 {
   font-size: 4em;
 }
-.about-box p{
+
+.about-box p {
   color: black;
-  opacity:0.8;
+  opacity: 0.8;
+  line-height: 1.6;
 }
-.skills{
+
+.about-box h2 {
+  font-size: 2.5em;
+}
+
+.skills {
   display: flex;
   text-align: left;
-  gap:5em;
+  gap: 5em;
 }
-.skills ul{
+
+.skills ul {
   font-size: 1.3em;
   font-weight: 500;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  color:black;
-  opacity:0.8;
-  align-items:baseline;
+  color: black;
+  opacity: 0.8;
+  align-items: baseline;
 }
-.skills ul li span{
+
+.skills ul li {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.skills ul li span {
   display: flex;
   align-items: center;
   gap: 0.3em;
   font-size: 1em;
-  transition:0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.skills ul li span:hover{
+
+.skills ul li span:hover {
   transform: translateX(10px);
 }
-.skills ul li i{
-  font-size:1em;
+
+.skills ul li i {
+  font-size: 1em;
 }
 
 .skills ul li .progress-bar {
   position: relative;
-  width: 200px; 
+  width: 200px;
   height: 10px;
   margin-top: 5px;
 }
+
 .skills ul li .progress-bar progress {
   width: 100%;
   height: 100%;
   border-radius: 5px;
   background-color: #ddd;
 }
+
 .skills ul li .progress-bar progress[value]::-webkit-progress-bar {
   background-color: #ddd;
   border-radius: 5px;
 }
+
 .skills ul li .progress-bar progress[value]::-webkit-progress-value {
-  background-color: linear-gradient(to right, #25be0a, #044967);
+  background: linear-gradient(to right, #25be0a, #044967);
   border-radius: 5px;
 }
+
 .skills ul li .progress-bar .progress-text {
   position: absolute;
   top: 0;
@@ -213,18 +239,17 @@ section{
   text-align: center;
   font-size: 12px;
   color: black;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   padding: 2px;
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
+
 .skills ul li .progress-bar:hover .progress-text {
-  opacity: 2; 
+  opacity: 1;
 }
-.about-box h2{
-  font-size: 2.5em;
-}
+
 
 /*PROJECTS*/
 #Projects{
@@ -430,7 +455,7 @@ footer {
 /*RESPONSIVENESS*/
 @media(max-width:968px){
   section{
-    padding: 8em 15%;
+    padding: 4em 10%;
   }
   nav .btn{
     display: none;
@@ -471,18 +496,52 @@ footer {
   }
   #about{
     flex-direction: column;
+    gap: 3em;
+    padding-top: 8em;
+    text-align: center;
   }
   #about img{
-    width: 32vw;
+    width: 60vw;
+    margin:0 auto
   }
-  #about h1{
-    font-size: 3em;
+  .about-box {
+    width: 100%;
+    align-items: center;
+    text-align: center;
   }
-  #about ul{
-    font-size: 1em;
+  .about-box h1{
+    font-size: 2.5em;
+  }
+
+  .about-box h2{
+    font-size: 2em;
+  }
+  
+
+  .skills {
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+  }
+
+  .skills ul {
+    width: 100%;
+    align-items: center;
+  }
+
+  .skills ul li .progress-bar {
+    width: 100%;
+    max-width: 300px;
   }
 }
 @media(max-width:768px){
+  section {
+    padding: 4em 5%;
+  }
+
+  nav {
+    padding: 1.5em 5%;
+  }
   #home h1{
     font-size: 2.5em;
   }
@@ -490,11 +549,29 @@ footer {
     font-size: 1.5em;
   }
   #home img{
-    width:32vw;
+    width:60vw;
   }
-  #about .skills{
-    gap: 3em;
+
+  #about img {
+    width: 80vw;
   }
+  .about-box h1 {
+    font-size: 2em;
+  }
+
+  .about-box h2 {
+    font-size: 1.8em;
+  }
+
+  .about-box p {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+  .skills ul li span {
+    font-size: 0.9em;
+  }
+
   #Projects .header{
     font-size: 3em;
   }
@@ -502,7 +579,7 @@ footer {
     font-size: 3em;
   }
   .education-item h2 {
-    font-size: 1em;
+    font-size: 1.8em;
   }
   #contact .header{
     font-size: 3em;
